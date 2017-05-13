@@ -74,12 +74,11 @@ class ViewController: UIViewController {
                         if let parseError = error?.userInfo["error"] as? String {
                             errorMessage = parseError
                         }
-                        self.lblErrorMessage.alpha = 1
                         self.lblErrorMessage.text = errorMessage
                     } else {
                         self.lblErrorMessage.text = ""
-                        self.lblErrorMessage.alpha = 0
                         print("Logged user in")
+                        self.performSegue(withIdentifier: "goToProfile", sender: self)
                     }
                     
                 })
@@ -127,35 +126,15 @@ class ViewController: UIViewController {
     @IBOutlet weak var txtBoxUserEmail: UITextField!
 
 
+    override func viewDidAppear(_ animated: Bool) {
+        if PFUser.current() != nil {
+            performSegue(withIdentifier: "goToProfile", sender: self)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        let testObject = PFObject(className: "TestObject2")
-//        
-//        testObject["foo"] = "bar"
-//        
-//        testObject.saveInBackground { (success, error) -> Void in
-//            
-//            // added test for success 11th July 2016
-//            
-//            if success {
-//                
-//                print("Object has been saved.")
-//                
-//            } else {
-//                
-//                if error != nil {
-//                    
-//                    print (error!)
-//                    
-//                } else {
-//                    
-//                    print ("Error")
-//                }
-//                
-//            }
-//            
-//        }
+
 
     }
 

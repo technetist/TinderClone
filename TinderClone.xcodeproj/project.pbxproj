@@ -18,6 +18,8 @@
 		7A0CEF0A1EABCF6500CD7690 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A0CEF091EABCF6500CD7690 /* AudioToolbox.framework */; };
 		7A0CEF0C1EABCF7000CD7690 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A0CEF0B1EABCF7000CD7690 /* SystemConfiguration.framework */; };
 		7A0CEF0E1EABCF7E00CD7690 /* libstdc++.6.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A0CEF0D1EABCF7E00CD7690 /* libstdc++.6.tbd */; };
+		7A37E1CB1EC673D8007D5F98 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A37E1CA1EC673D8007D5F98 /* ProfileViewController.swift */; };
+		7A37E1CD1EC68435007D5F98 /* blank-profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A37E1CC1EC68435007D5F98 /* blank-profile.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		7A0CEF091EABCF6500CD7690 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		7A0CEF0B1EABCF7000CD7690 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		7A0CEF0D1EABCF7E00CD7690 /* libstdc++.6.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.tbd"; path = "usr/lib/libstdc++.6.tbd"; sourceTree = SDKROOT; };
+		7A37E1CA1EC673D8007D5F98 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = ../ProfileViewController.swift; sourceTree = "<group>"; };
+		7A37E1CC1EC68435007D5F98 /* blank-profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blank-profile.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,9 +77,11 @@
 		7A0CEEEF1EABBC3D00CD7690 /* TinderClone */ = {
 			isa = PBXGroup;
 			children = (
+				7A37E1CA1EC673D8007D5F98 /* ProfileViewController.swift */,
 				7A0CEEF01EABBC3D00CD7690 /* AppDelegate.swift */,
 				7A0CEEF21EABBC3D00CD7690 /* ViewController.swift */,
 				7A0CEEF41EABBC3D00CD7690 /* Main.storyboard */,
+				7A37E1CC1EC68435007D5F98 /* blank-profile.png */,
 				7A0CEEF71EABBC3D00CD7690 /* Assets.xcassets */,
 				7A0CEEF91EABBC3D00CD7690 /* LaunchScreen.storyboard */,
 				7A0CEEFC1EABBC3D00CD7690 /* Info.plist */,
@@ -158,6 +164,7 @@
 			files = (
 				7A0CEEFB1EABBC3D00CD7690 /* LaunchScreen.storyboard in Resources */,
 				7A0CEEF81EABBC3D00CD7690 /* Assets.xcassets in Resources */,
+				7A37E1CD1EC68435007D5F98 /* blank-profile.png in Resources */,
 				7A0CEEF61EABBC3D00CD7690 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -169,6 +176,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A37E1CB1EC673D8007D5F98 /* ProfileViewController.swift in Sources */,
 				7A0CEEF31EABBC3D00CD7690 /* ViewController.swift in Sources */,
 				7A0CEEF11EABBC3D00CD7690 /* AppDelegate.swift in Sources */,
 			);
@@ -342,6 +350,7 @@
 				7A0CEF011EABBC3D00CD7690 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
