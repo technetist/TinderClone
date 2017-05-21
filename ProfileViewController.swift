@@ -43,6 +43,8 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
             } else {
                 self.lblErrorMessage.text = ""
                 print("User data saved")
+                
+                self.performSegue(withIdentifier: "showSwipingSegue", sender: self)
             }
 
         })
@@ -77,7 +79,45 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
                 }
             })
         }
-
+        
+        //Create extra users
+        
+//        let urlArray = ["http://immagini.disegnidacolorareonline.com/cache/data/disegni-colorati/serie-tv/disegno-ben-ten-colorato-600x600.jpg", "https://s-media-cache-ak0.pinimg.com/736x/26/2d/d4/262dd427dedd15872c2c85337dc0936e.jpg", "https://metrouk2.files.wordpress.com/2015/02/ad_158595188.jpg", "https://www.mememaker.net/static/images/templates/755243.jpg", "http://2.bp.blogspot.com/-pP2pk5QX9es/T-nXkChsLBI/AAAAAAAAAMg/2OlsraSIZOQ/s1600/batman__brave_and_the_bold_by_noahconners-d2yeii2.jpg", "https://pbs.twimg.com/profile_images/1219552606/homersimpson_400x400.jpg", "https://s-media-cache-ak0.pinimg.com/originals/eb/7b/e9/eb7be9912427044a47a2bae6620f7617.jpg", "http://www.homedepot.com/catalog/productImages/1000/8f/8f18dc40-a346-4473-a5a5-26affc0f48eb_1000.jpg"]
+//        
+//        var counter = 0
+//        
+//        for urlString in urlArray {
+//            counter += 1
+//            let url = URL(string: urlString)!
+//            do {
+//                let data = try Data(contentsOf: url)
+//                let imageFile = PFFile(name: "photo.png", data: data)
+//                let user = PFUser()
+//                
+//                user["photo"] = imageFile
+//                user.username = String(counter)
+//                user.password = "secret"
+//                user["isInterestedInWomen"] = false
+//                user["isFemale"] = false
+//                
+//                let acl = PFACL()
+//                
+//                acl.getPublicWriteAccess = true
+//                user.acl = acl
+//                
+//                user.signUpInBackground(block: { (success, error) in
+//                    if error != nil {
+//                        print(error!)
+//                    } else if success{
+//                        print("Users added")
+//                    }
+//                })
+//                
+//            } catch {
+//                print("Could not get url")
+//            }
+//        }
+//
         
     }
 

@@ -35,6 +35,12 @@ class ViewController: UIViewController {
         user.email = txtBoxUserEmail.text
         user.password = txtBoxPassword.text
         
+        let acl = PFACL()
+        
+        acl.getPublicWriteAccess = true
+        acl.getPublicReadAccess = true
+        user.acl = acl
+        
         
         if signupMode {
             if txtBoxUsername.text != "" && txtBoxUserEmail.text != "" && txtBoxPassword.text != "" && txtBoxPasswordConfirm.text != "" {
@@ -78,7 +84,7 @@ class ViewController: UIViewController {
                     } else {
                         self.lblErrorMessage.text = ""
                         print("Logged user in")
-                        self.performSegue(withIdentifier: "goToProfile", sender: self)
+                        self.redirectUser()
                     }
                     
                 })
@@ -127,8 +133,19 @@ class ViewController: UIViewController {
 
 
     override func viewDidAppear(_ animated: Bool) {
+        redirectUser()
+    }
+    
+    func redirectUser() {
         if PFUser.current() != nil {
-            performSegue(withIdentifier: "goToProfile", sender: self)
+            
+            if PFUser.current()?["isFemale"] != nil && PFUser.current()?["isInterestedInWomen"] != nil && PFUser.current()?["photo"] != nil {
+                
+                performSegue(withIdentifier: "swipeFromInitSegue", sender: self)
+                
+            } else {
+                performSegue(withIdentifier: "goToProfile", sender: self)
+            }
         }
     }
     
